@@ -1,31 +1,29 @@
 <?php
-
 declare(strict_types=1);
 
 namespace KingsCode\KlantenVertellen\Models;
 
-abstract class Model
-{
-    /**
-     * @var array $properties
-     */
-    private $properties;
+abstract class Model{
 
-    /**
-     * Review constructor.
-     *
-     * @param  mixed $data
-     */
-    public function __construct(array $data)
-    {
-        $this->properties = $data;
-    }
+	/**
+	 * @var array $properties
+	 */
+	private $properties;
 
-    /**
-     * @return mixed
-     */
-    public function __get($name)
-    {
-        return $this->properties[$name];
-    }
+	/**
+	 * Review constructor.
+	 * @param  mixed $data
+	 */
+	public function __construct(array $data){
+		$this->properties = $data;
+	}
+
+	/**
+	 * @param $name
+	 * @return mixed
+	 */
+	public function __get($name){
+		return $this->properties[$name];
+	}
+
 }
